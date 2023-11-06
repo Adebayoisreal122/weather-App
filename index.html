@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="m-5 fs-1 text-light fs-1">
+        <h1>Weather App</h1>
+        <div class="text-warning fs-5 " id="show"></div>
+    </div>
+    <div class="d-flex ms-5 gap-5">
+        <div class="input w-50 shadow-lg rounded rounded-4 --bs-bg-opacity: .5">
+                <input id="cityInput" type="text" name="text" class="input_search form-control" placeholder="Enter city name">
+
+                <button onclick="getWeather()" class="button" data-text="Awesome">
+                    <span class="actual-text">&nbsp;Check&nbsp;</span>
+                    <span aria-hidden="true" class="hover-text">&nbsp;Check&nbsp;</span>
+                </button>
+                <div class=" ms-5 text-dark justify-content-right" id="weatherInfo"></div>
+        </div>
+        <div class="w-50 --bs--bg-opacity: .5 border border-2 border-dark details">
+            <h1 class="text-center my-4">Details</h1>
+            <div id="shower"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
