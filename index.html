@@ -13,18 +13,18 @@
         <div class="text-warning fs-5 " id="show"></div>
     </div>
     <div class="d-flex ms-5 gap-5">
-        <div class="input w-50 shadow-lg rounded rounded-4 --bs-bg-opacity: .5">
-                <input id="cityInput" type="text" name="text" class="input_search form-control" placeholder="Enter city name">
+        <div class="input w-50 shadow-lg rounded rounded-4  p-5" style="--bs-bg-opacity: .1">
+                <input id="cityInput" type="text" name="text" class="input_search form-control my-4 bg-info " style="--bs-bg-opacity: .2" placeholder="Enter city name">
 
                 <button onclick="getWeather()" class="button" data-text="Awesome">
-                    <span class="actual-text">&nbsp;Check&nbsp;</span>
-                    <span aria-hidden="true" class="hover-text">&nbsp;Check&nbsp;</span>
+                    <span class="actual-text text-secondary fs-5 fw-bold">&nbsp;Check&nbsp;</span>
+                    <span aria-hidden="true" class="hover-text fs-5 fw-bold">&nbsp;Check&nbsp;</span>
                 </button>
                 <div class=" ms-5 text-dark justify-content-right" id="weatherInfo"></div>
         </div>
-        <div class="w-50 --bs--bg-opacity: .5 border border-2 border-dark details">
+        <div class="w-50 bg-info p-4 shadow rounded rounded-4 me-5 p-5 border border-info details" style="--bs-bg-opacity: .1">
             <h1 class="text-center my-4">Details</h1>
-            <div id="shower"></div>
+            <div class="" id="shower"></div>
         </div>
     </div>
 

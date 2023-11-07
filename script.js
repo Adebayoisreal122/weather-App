@@ -5,6 +5,9 @@ function getWeather() {
     // Check if the city input is not empty
     if (cityInput.trim() === '') {
         show.innerHTML= `Please enter a city name.`
+        setTimeout(() => {
+            show.innerHTML=``
+        }, 5000);
         // alert('Please enter a city name.');
         return;
     }
@@ -19,7 +22,7 @@ function getWeather() {
             return response.json();
         })
         .then(data => {
-            
+            console.log(data);
             displayWeather(data);
         })
         .catch(error => {
@@ -35,6 +38,8 @@ function displayWeather(data) {
     const temperature = data.main.temp;
     const temperatureCel = (temperature - 273.15).toFixed(1); 
     const description = data.weather[0].description;
+    const long = data.coord.lon;
+    const lati = data.coord.lat;
     console.log(icon);
 
     weatherInfo.innerHTML = `
@@ -47,7 +52,9 @@ function displayWeather(data) {
     <h2>Weather in ${cityName}</h2>
     <p>Temperature: ${temperatureCel} ⁰C</p>
     <p>Description: ${description}</p>
-    <img scr=${icon} alt="weather icon" />`
+    <img scr=${icon} alt="weather icon" />
+    <p> Longitude: ${long}</p>
+    <p> Latitude: ${lati}</p>`
 
     cityInput.value = ``
 }
