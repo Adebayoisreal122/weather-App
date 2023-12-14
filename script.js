@@ -46,13 +46,12 @@ function displayWeather(data) {
         <h2>Weather in ${cityName}</h2>
         <p>Temperature: ${temperatureCel} ⁰C</p>
         <p>Description: ${description}</p>
-        <img scr=${icon} alt="weather icon" />
     `;
     shower.innerHTML = `
     <h2>Weather in ${cityName}</h2>
     <p>Temperature: ${temperatureCel} ⁰C</p>
     <p>Description: ${description}</p>
-    <img scr=${icon} alt="weather icon" />
+    <img src=${icon} alt="weather icon" />
     <p> Longitude: ${long}</p>
     <p> Latitude: ${lati}</p>`
 
