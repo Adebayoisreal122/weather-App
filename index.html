@@ -7,27 +7,80 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .details{
+        width: 45%;
+    }
+    .input{
+        margin-left: 20px;
+        width: 45%;
+    }
+
+    .input {
+      --bs-bg-opacity: .1;
+    }
+
+    .bg-info {
+      --bs-bg-opacity: .2;
+    }
+
+    @media (max-width: 768px) {
+      .input, .details {
+        width: 75%;
+        margin: auto;
+      }
+    }
+  </style>
 <body>
     <div class="m-5 fs-1 text-light fs-1">
         <h1>Weather App</h1>
-        <div class="text-warning fs-5 " id="show"></div>
+        <div class="text-warning fs-2 " id="show"></div>
     </div>
-    <div class="d-flex flex-wrap ms-4 gap-2">
-        <div class="input   mx-auto shadow-lg rounded rounded-4  p-2" style="--bs-bg-opacity: .1">
+    <!-- <div class="row ms-4 gap-2">
+        <div class="input  col-lg-6 col-6  shadow-lg rounded rounded-4  p-2" style="--bs-bg-opacity: .1">
                 <input id="cityInput" type="text" name="text" class="input_search form-control my-4 bg-info " style="--bs-bg-opacity: .2" placeholder="Enter city name">
 
                 <button onclick="getWeather()" class="button" data-text="Awesome">
                     <span class="actual-text text-secondary fs-5 fw-bold">&nbsp;Check&nbsp;</span>
                     <span aria-hidden="true" class="hover-text fs-5 fw-bold">&nbsp;Check&nbsp;</span>
                 </button>
-                <div class=" ms-auto text-dark justify-content-right" id="weatherInfo"></div>
+                <div class=" mx-auto text-dark justify-content-right" id="weatherInfo"></div>
         </div>
-        <div class=" mx-auto bg-info p-3 shadow rounded rounded-4 me-2 border border-info details" style="--bs-bg-opacity: .1">
+        <div class=" col-lg-6 col-6 bg-info px-5 shadow rounded rounded-4  border border-info details" style="--bs-bg-opacity: .1">
             <h1 class="text-center my-2">Details</h1>
             <div class="" id="shower"></div>
         </div>
-    </div>
+    </div> -->
 
+    <div class="row col gap-4 container-fluid m-auto ">
+        <div class="input col-6  col-sm-12  shadow-lg rounded rounded-4 p-2">
+          <input id="cityInput" type="text" name="text" class="input_search form-control my-4 bg-info" placeholder="Enter city name">
+          
+          <button onclick="getWeather()" class="button" data-text="Awesome">
+            <span class="actual-text text-secondary fs-5 fw-bold">&nbsp;Check&nbsp;</span>
+            <span aria-hidden="true" class="hover-text fs-5 fw-bold">&nbsp;Check&nbsp;</span>
+          </button>
+          
+          <div class="mx-auto text-dark justify-content-right" id="weatherInfo"></div>
+        </div>
+    
+        <div class="col-6 col-sm-12 bg-info px-2 shadow rounded rounded-4 border border-info details">
+          <h1 class="text-center text-dark fs-1 my-2">Details</h1>
+          <div class="" id="shower"></div>
+        </div>
+      </div>
+    
+      <!-- Bootstrap JS and Popper.js scripts (required for Bootstrap features) -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
     <script src="script.js"></script>
 </body>
 </html>

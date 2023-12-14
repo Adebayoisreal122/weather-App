@@ -27,8 +27,15 @@ function getWeather() {
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
-        });
-}
+            show.innerHTML= `The city is not found`
+            setTimeout(() => {
+                show.innerHTML=``
+                cityInput.value = ''
+            }, 5000);
+        }
+        
+        );
+    }
 
 function displayWeather(data) {
     const weatherInfo = document.getElementById('weatherInfo');
@@ -41,19 +48,20 @@ function displayWeather(data) {
     const long = data.coord.lon;
     const lati = data.coord.lat;
     console.log(icon);
-
-    weatherInfo.innerHTML = `
+    
+        weatherInfo.innerHTML = `
+            <h2>Weather in ${cityName}</h2>
+            <p>Temperature: ${temperatureCel} ⁰C</p>
+            <p>Description: ${description}</p>
+        `;
+        shower.innerHTML = `
         <h2>Weather in ${cityName}</h2>
         <p>Temperature: ${temperatureCel} ⁰C</p>
         <p>Description: ${description}</p>
-    `;
-    shower.innerHTML = `
-    <h2>Weather in ${cityName}</h2>
-    <p>Temperature: ${temperatureCel} ⁰C</p>
-    <p>Description: ${description}</p>
-    <img src=${icon} alt="weather icon" />
-    <p> Longitude: ${long}</p>
-    <p> Latitude: ${lati}</p>`
+        <img src=${icon} alt="weather icon" />
+        <p> Longitude: ${long}</p>
+        <p> Latitude: ${lati}</p>`
+    
+        cityInput.value = ``
 
-    cityInput.value = ``
 }
